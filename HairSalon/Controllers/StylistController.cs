@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace HairSalon.Controllers
@@ -34,11 +36,10 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult(int id)
+    public ActionResult Details(int id)
     {
-      Stylist thisStylist = _dbStylist.FirstorDefault(x => x.StylistId == id);
+      Stylist thisStylist = _db.Stylist.FirstOrDefault(x => x.StylistId == id);
       return View(thisStylist);
     }
-
   }
 }
