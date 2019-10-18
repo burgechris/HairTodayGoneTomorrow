@@ -2,3 +2,9 @@
   Layout = "_Layout";
 }
 
+@using HairSalon.Models;
+@model HairSalon.Models.Client;
+
+<h2>@Model.Name</h2>
+
+<button class="btn btn-outline-dark">@Html.ActionLink("Back To Stylist Details", "Details", "Stylist")</button>
