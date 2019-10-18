@@ -8,23 +8,22 @@
 
 _This web application is for a hair salon to add stylists to their database and keep track of which clients belong to specific stylist._
 
-## Specifications
-
-| Behavior | Input | Output |
-| -------- | :---------: | :---------: |
-| The application will have the ability to add a new stylist | 'Kelly' | 'Added' |
-
-
 ## Setup/Installation Requirements
 
 * _Clone this repository using this link: https://github.com/burgechris/HairTodayGoneTomorrow.git_
-* _Navigate to "OrderTracker"_
+* _Log into MySQL using the terminal_
+* _>CREATE DATABASE chris_burge;
+* _>USE chris_burge;
+* _>CREATE TABLE stylist (id serial PRIMARY KEY, name VARCHAR(255), specialty VARCHAR(255));
+* _>CREATE TABLE client (id serial PRIMARY KEY, name VARCHAR(255))
+* _Navigate to HairTodayGoneTomorrow project directory
+* _Navigate to the HairSalon subdirectory
 * _Run the command "dotnet restore"_
 * _Run the command "dotnet run"_
 
 ## Technologies Used
 
-_C#, .NET_, HTML, Bootstrap
+_C#, .NET_, EFCore, 
 
 ### License
 
