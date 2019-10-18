@@ -29,7 +29,8 @@ namespace HairSalon.Controllers
       return View();
     }
 
-    public ActionResult New(Client client)
+    [HttpPost("/client/new")]
+    public ActionResult New(Client client, int StylistId)
     {
       _db.Client.Add(client);
       _db.SaveChanges();
