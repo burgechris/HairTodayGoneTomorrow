@@ -30,11 +30,11 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost("/client/new")]
-    public ActionResult New(Client client, int StylistId)
+    public ActionResult New(Client client)
     {
       _db.Client.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Details", client);
+      return RedirectToAction("Details", "Stylist", new {StylistId = ViewBag.StylistId});
     }
   }
 }
