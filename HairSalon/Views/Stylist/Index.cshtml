@@ -11,6 +11,7 @@
 {
   <h4>No Stylists Have Been Added.</h4>
 }
+
 @foreach (Stylist stylist in Model)
 {
   <li><button class="btn btn-outline-dark">@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId})</button></li>

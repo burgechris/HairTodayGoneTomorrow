@@ -19,22 +19,23 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Client> model = _db.Client.Include(client => client.Stylist).ToList();
+      List<Client> model = _db.Client.Include(clients => clients.Stylist).ToList();
       return View(model);
     }
 
+    [HttpGet]
     public ActionResult New(int StylistId)
     {
-      ViewBag.StylistId = StylistId;
+      ViewBag.StylistId = new SelectList(_db.Stylist, "StylistId", "Name");
       return View();
     }
 
-    [HttpPost("/client/new")]
+    [HttpPost]
     public ActionResult New(Client client)
     {
       _db.Client.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Details", "Stylist", new {StylistId = ViewBag.StylistId});
+      return RedirectToAction("Index");
     }
   }
 }
